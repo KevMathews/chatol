@@ -84,8 +84,6 @@ const PartnerMessage = styled.div`
 	text-align: left;
 `;
 export default function LiveChat(props) {
-	// return <div className="HomePage">This is the {props.page} page</div>;
-	// }
 	const [yourID, setYourID] = useState();
 	const [messages, setMessages] = useState([]);
 	const [message, setMessage] = useState('');

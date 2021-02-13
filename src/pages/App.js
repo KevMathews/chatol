@@ -63,7 +63,7 @@ export default function App(props) {
 				</label>
 				<input type="submit" value="Create MicroBlog" />
 			</form> */}
-			<h1>Chatterpalooza</h1>
+			<h1>ChatOL</h1>
 		</div>
 	);
 }
