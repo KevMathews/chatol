@@ -7,34 +7,93 @@ const path = require('path');
 const http = require("http");
 const server = http.createServer(app);
 const socket = require("socket.io");
-
+// const { SSL_OP_NO_TICKET } = require('constants');
 const io = socket(server)
 
-const MONGODB_URI = process.env.MONGODB_URI
+// const MONGODB_URI = process.env.MONGODB_URI
 
-const db = mongoose.connection;
+// const db = mongoose.connection;
 let users = [];
 const messages = {
-	general: [],
-	random: [],
-	jokes: [],
-	javascript: []
+	General: [],
+	Arts: [],
+	Celebrities: [],
+	Food: [],
+	Health: [],
+	Jokes: [],
+	Javascript: [],
+	Movies: [],
+	Music: [],
+	News: [],
+	Places: [],
+	Romance: [],
+	Sports: []
 };
 
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-	useFindAndModify: false
+// mongoose.connect(MONGODB_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// 	useFindAndModify: false
+// });
+// db.on('open', () => {
+//     console.log('Mongo is Connected');
+// });
+//  originally how i had server.io setup on server side
+// io.on("connection", socket => {
+//     socket.emit("your id", socket.id);
+//     socket.on("send message", body => {
+//         io.emit("message", body)
+//     })
+// })
+
+//  below are changes made for room/user added below ///
+io.on('connection', socket => {
+	socket.on("join server", (username) => {
+		const user = {
+			username,
+			id: socket.id,
+		};
+		users.push(user);
+		io.emit("new user", users);
+	});
+
+	socket.on("join room", (roomName, cb) => {
+		socket.join(roomName);
+		cb(messages[roomName]);
+		socket.emit("joined", messages[roomName]);
+	});
+
+	socket.on("send message", ({ content, to, sender, chatName, isChannel }) => {
+		if (isChannel) {
+			const payload = {
+				content,
+				chatName,
+				sender,
+			};
+			socket.to(to).emit("new message", payload);
+		} else {
+			const payload = {
+				content,
+				chatName: sender,
+				sender
+			};
+			socket.to(to).emit("new message", payload);
+		}
+		if (messages[chatName]) {
+			messages[chatName].push({
+				sender,
+				content
+			});
+		}
+	});
+
+	socket.on("disconnect", () => {
+		users = users.filter(u => u.id !== socket.id);
+		io.emit("new user", users);
+	});
 });
-db.on('open', () => {
-    console.log('Mongo is Connected');
-});
-io.on("connection", socket => {
-    socket.emit("your id", socket.id);
-    socket.on("send message", body => {
-        io.emit("message", body)
-    })
-})
+
+
 
 /* Middleware */
 app.use(express.json());
@@ -58,4 +117,5 @@ app.get('*', (req, res) => {
 //     console.log(`API Listening on port ${PORT}`);
 // });
 
-server.listen(8000, () => console.log("Listening in on port 8000"));
+// server.listen(8000, () => console.log("Listening in on port 8000"));
+server.listen(PORT || 5000);

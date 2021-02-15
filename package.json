@@ -2,14 +2,14 @@
   "engines": {
     "node": ">=12.16.3"
   },
-  "name": "big-poppa-code-react-starter-kit",
+  "name": "chatter-online",
   "version": "0.1.0",
-  "proxy": "http://localhost:1337",
   "description": "A way for people to start a react project and not be locked into create react app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build && gulp styles",
+    "dev:build": "gulp build && gulp styles",
+    "build": "npm run build:webpack",
     "dev:webpack": "webpack --mode development --env.NODE_ENV=dev",
     "build:webpack": "webpack --mode production --env.NODE_ENV=production",
     "dev": "gulp",

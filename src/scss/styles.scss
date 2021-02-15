@@ -18,18 +18,52 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   color: black;
 }
-.HomePage {
-
+.signInContainerDiv{
+display: grid;
+justify-content: center;
+align-items: center;
+margin-top: 10%;
 }
-
-.AboutPage {
-
+.liveChatDiv{
+  background-color: #8fddfc;
 }
-
-.ContactPage{
-
+.sidePanelHr {
+  height: 2px;
+  background-color:#0083ff;
+  width: 75%;
+  margin-left: -20%;
 }
-
-.AppPage {
-
+.chatChannelName{
+  font-size: 2.3rem;
+  margin-left: 25%;
+  margin-top: 70%;
+  text-align: center;
+  
+}
+.mainPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;  
+}
+.loginGifDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh; 
+  margin-top: 5%;
+}
+.connectToChatterOnlineDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh; 
+  margin-top: 5%;
+}
+.chatPageLogo {
+  height: 95%;
+  margin-left: 5%;
+}
+.mainPageConnectButton {
+  margin-left: 25%;
 }

@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import { Link } from 'react-router-dom';
+
 export default function App(props) {
+	const [isVisible, setIsVisible] = useState(false);
+	const [isInvisible, setInvisible] = useState(false);
+
+	const toggleConnectingToChatterOnline = () => {
+		setIsVisible(!isVisible);
+		setInvisible(!isInvisible);
+	};
 	const [blogs, setBlogs] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
@@ -37,33 +46,30 @@ export default function App(props) {
 			console.error(error);
 		}
 	};
+
 	return (
 		<div className="AppPage">
-			{/* {blogs.map(blog => {
-				return (
-					<div key={blog._id}>
-						<Link to={`/${blog._id}`}>
-							<h2>{blog.title}</h2>
-						</Link>
-						<p>{blog.body}</p>
-					</div>
-				);
-			})} */}
-			{/* <form
-				style={{ display: 'flex', flexDirection: 'column' }}
-				onSubmit={handleSubmit}
-			>
-				<label>
-					{' '}
-					Title: <input type="text" ref={titleInput} />
-				</label>
-				<label>
-					{' '}
-					Body: <input type="text" ref={bodyInput} />
-				</label>
-				<input type="submit" value="Create MicroBlog" />
-			</form> */}
-			<h1>ChatOL</h1>
+			<div className="mainPageContainer">
+				<div
+					className="loginGifDiv"
+					style={{ display: isVisible ? 'block' : 'none' }}
+				>
+					<img src="https://i.imgur.com/mzjB1aq.gif" />
+				</div>
+				<div
+					className="connectToChatterOnlineDiv"
+					style={{ display: isInvisible ? 'none' : 'block' }}
+				>
+					<img src="https://i.imgur.com/KWCr3oJ.png" />
+					<br />
+					<button
+						className="mainPageConnectButton"
+						onClick={toggleConnectingToChatterOnline}
+					>
+						<h3>Connect to Chatter Online</h3>
+					</button>
+				</div>
+			</div>
 		</div>
 	);
 }
