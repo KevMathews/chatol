@@ -6,10 +6,7 @@ export default function App(props) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isInvisible, setInvisible] = useState(false);
 
-	const toggleConnectingToChatterOnline = () => {
-		setIsVisible(!isVisible);
-		setInvisible(!isInvisible);
-	};
+	const toggleConnectingToChatterOnline = () => {};
 	const [blogs, setBlogs] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
@@ -46,6 +43,12 @@ export default function App(props) {
 			console.error(error);
 		}
 	};
+	const audioRef = useRef(null);
+	const play = url => {
+		audioRef.current.play();
+		setIsVisible(!isVisible);
+		setInvisible(!isInvisible);
+	};
 
 	return (
 		<div className="AppPage">
@@ -54,22 +57,21 @@ export default function App(props) {
 					className="loginGifDiv"
 					style={{ display: isVisible ? 'block' : 'none' }}
 				>
-					<img src="https://i.imgur.com/mzjB1aq.gif" />
+					<img src="/img/logingif.gif" />
 				</div>
 				<div
 					className="connectToChatterOnlineDiv"
 					style={{ display: isInvisible ? 'none' : 'block' }}
 				>
-					<img src="https://i.imgur.com/KWCr3oJ.png" />
+					<img src="/img/mainlogo.png" />
 					<br />
-					<button
-						className="mainPageConnectButton"
-						onClick={toggleConnectingToChatterOnline}
-					>
+					<button className="mainPageConnectButton" onClick={() => play()}>
 						<h3>Connect to Chatter Online</h3>
 					</button>
+					{/* <input type="button" value="Go Online" onClick={() => play()} /> */}
 				</div>
 			</div>
+			<audio src="img/dial-up-modem-02.mp3" ref={audioRef}></audio>
 		</div>
 	);
 }

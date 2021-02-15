@@ -15,7 +15,7 @@ const rooms = [
 
 const Container = styled.div`
 	height: 95vh;
-	width: 100%;
+	width: 95%;
 	display: flex;
 	background-color: #fafafa;
 	justify-content: center;
@@ -32,13 +32,13 @@ const SideBar = styled.div`
 
 const ChatPanel = styled.div`
 	height: 100;
-	width: 85vw;
+	width: 80vw;
 	display: flex;
 	flex-direction: column;
 `;
 
 const BodyContainer = styled.div`
-	width: 99.5%;
+	width: 94.5%;
 	height: 75%;
 	overflow: scroll;
 	border-bottom: 3px solid #0083ff;
@@ -51,7 +51,7 @@ const BodyContainer = styled.div`
 
 const TextBox = styled.textarea`
 	height: 15vh;
-	width: 99.5%;
+	width: 94.5%;
 	border-bottom: 3px solid #0083ff;
 	border-right: 3px solid #0083ff;
 	border-left: 3px solid #0083ff;
@@ -155,10 +155,7 @@ export default function Chat(props) {
 						<span className="chatChannelName">
 							{props.currentChat.chatName}
 						</span>
-						<img
-							className="chatPageLogo"
-							src="https://i.imgur.com/CzW2kzM.png"
-						/>
+						<img className="chatPageLogo" src="/img/smalltitle.png" />
 					</ChannelInfo>
 					<BodyContainer>{body}</BodyContainer>
 					<TextBox
