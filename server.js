@@ -10,9 +10,9 @@ const socket = require("socket.io");
 // const { SSL_OP_NO_TICKET } = require('constants');
 const io = socket(server)
 
-// const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI
 
-// const db = mongoose.connection;
+const db = mongoose.connection;
 let users = [];
 const messages = {
 	General: [],
@@ -30,14 +30,14 @@ const messages = {
 	Sports: []
 };
 
-// mongoose.connect(MONGODB_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// 	useFindAndModify: false
-// });
-// db.on('open', () => {
-//     console.log('Mongo is Connected');
-// });
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+	useFindAndModify: false
+});
+db.on('open', () => {
+    console.log('Mongo is Connected');
+});
 //  originally how i had server.io setup on server side
 // io.on("connection", socket => {
 //     socket.emit("your id", socket.id);
