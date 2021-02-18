@@ -39,13 +39,13 @@ export default function About(props) {
 				</h4>
 				<h2 className="About_Page__content__heading__caption">
 					<p>
-						I'm an aspiring web developer with a background in sales and
-						entrepreneurship. As a business owner I learned how to handle and
-						resolve a wide range of issues which now enables me to approach
-						projects with confidence and creativity. I bring my passion for a
-						clean and organized work product into each project, and I love
-						nothing more then working as a team to find the most efficient and
-						elegant solutions to complex problems.
+						I'm a web developer with a background in sales and entrepreneurship.
+						As a business owner I learned how to handle and resolve a wide range
+						of issues which now enables me to approach projects with confidence
+						and creativity. I bring my passion for a clean and organized work
+						product into each project, and I love nothing more then working as a
+						team to find the most efficient and elegant solutions to complex
+						problems.
 					</p>
 				</h2>
 			</div>
