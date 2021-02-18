@@ -18,7 +18,7 @@ export default function Form(props) {
 						/>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button onClick={props.connect}>Login to Chat</button>
+						<button onClick={props.connect}>Enter Chat</button>
 					</form>
 				</div>
 			</div>

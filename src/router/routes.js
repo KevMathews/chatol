@@ -15,7 +15,7 @@ const routes = [
 	},
 	{
 		Component: Forums,
-		key: 'Forums',
+		key: 'In Memory Of...',
 		path: '/Forums'
 	},
 

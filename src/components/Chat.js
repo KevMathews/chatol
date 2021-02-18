@@ -39,12 +39,14 @@ const ChatPanel = styled.div`
 
 const BodyContainer = styled.div`
 	width: 94.5%;
+	padding: 10px;
+	padding-left: 20px;
 	height: 75%;
 	overflow: scroll;
-	border-bottom: 3px solid #0083ff;
-	border-left: 3px solid #0083ff;
-	border-right: 3px solid #0083ff;
-	border-top: 3px solid #0083ff;
+	border-bottom: 13px solid #0083ff;
+	border-left: 13px solid #0083ff;
+	border-right: 13px solid #0083ff;
+	border-top: 13px solid #0083ff;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 `;
@@ -52,9 +54,10 @@ const BodyContainer = styled.div`
 const TextBox = styled.textarea`
 	height: 15vh;
 	width: 94.5%;
-	border-bottom: 3px solid #0083ff;
-	border-right: 3px solid #0083ff;
-	border-left: 3px solid #0083ff;
+	padding: 10px;
+	border-bottom: 13px solid #0083ff;
+	border-right: 13px solid #0083ff;
+	border-left: 13px solid #0083ff;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 `;

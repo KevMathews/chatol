@@ -43,13 +43,14 @@ export default function App(props) {
 			console.error(error);
 		}
 	};
+
 	const audioRef = useRef(null);
 	const play = url => {
 		audioRef.current.play();
 		setIsVisible(!isVisible);
 		setInvisible(!isInvisible);
 	};
-
+	const loadingimg = '/img/logingif.gif' + '?a=' + Math.random();
 	return (
 		<div className="AppPage">
 			<div className="mainPageContainer">
@@ -57,21 +58,40 @@ export default function App(props) {
 					className="loginGifDiv"
 					style={{ display: isVisible ? 'block' : 'none' }}
 				>
-					<img src="/img/logingif.gif" />
+					<img className="loginGifs" src={loadingimg} />
 				</div>
 				<div
 					className="connectToChatterOnlineDiv"
 					style={{ display: isInvisible ? 'none' : 'block' }}
 				>
-					<img src="/img/mainlogo.png" />
+					<img className="loginGifs" src="/img/login.jpg" />
 					<br />
-					<button className="mainPageConnectButton" onClick={() => play()}>
-						<h3>Connect to Chatter Online</h3>
-					</button>
+					<img
+						src="/img/signon1.png"
+						className="mainPageConnectButton"
+						onClick={() => play()}
+					>
+						{/* <h3>Connect to Chatter Online</h3> */}
+					</img>
 					{/* <input type="button" value="Go Online" onClick={() => play()} /> */}
 				</div>
 			</div>
-			<audio src="img/dial-up-modem-02.mp3" ref={audioRef}></audio>
+			<audio src="img/login.mp3" ref={audioRef}></audio>
+			<div>
+				<p className="introPart1">
+					The late 90's were a great time to be alive, and with your 9600 baud
+					modem (14,400 if you were hot stuff) you could access the web via
+					America Online. With the implementation of their live chat rooms it
+					was the place to be online to meet and connect with people.
+				</p>
+				<p className="introPart2">
+					{' '}
+					This site was made to pay homage to AOL, and more specifically the
+					live chat rooms that they had. So come in, meet some new friends in
+					chat, and be sure to post a memory you might have about AOL on the 'In
+					Memory Of' message board.
+				</p>
+			</div>
 		</div>
 	);
 }

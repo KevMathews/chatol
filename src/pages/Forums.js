@@ -38,7 +38,7 @@ export default function Forums(props) {
 		}
 	};
 	return (
-		<div className="AppPage">
+		<div className="forumsPage">
 			{blogs.map(blog => {
 				return (
 					<div key={blog._id}>

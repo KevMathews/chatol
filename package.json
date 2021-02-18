@@ -61,6 +61,7 @@
     "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.14",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.6.4",
     "express": "^4.17.1",
     "immer": "^8.0.1",
     "mongoose": "^5.10.2",

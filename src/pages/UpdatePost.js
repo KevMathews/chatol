@@ -31,7 +31,7 @@ export default function UpdatePost(props) {
 		} catch (error) {
 			console.error(error);
 		} finally {
-			window.location.assign('/');
+			window.location.assign('/Forums');
 		}
 	};
 	const handleSubmit = async e => {
