@@ -2,7 +2,6 @@ import React from 'react';
 import App from '../pages/App';
 import About from '../pages/About';
 import LiveChat from '../pages/LiveChat';
-import Contact from '../pages/Contact';
 import BlogPost from '../pages/BlogPost';
 import UpdatePost from '../pages/UpdatePost';
 import Home from '../pages/Home';

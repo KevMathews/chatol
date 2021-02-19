@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const blogSchema = new Schema(
 	{
+		name: String,
 		title: String,
 		body: String,
 		//  below how we connect blog to comments schema

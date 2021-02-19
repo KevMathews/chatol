@@ -39,6 +39,7 @@ db.on('open', () => {
     console.log('Mongo is Connected');
 });
 //  originally how i had server.io setup on server side
+
 // io.on("connection", socket => {
 //     socket.emit("your id", socket.id);
 //     socket.on("send message", body => {
@@ -46,7 +47,7 @@ db.on('open', () => {
 //     })
 // })
 
-//  below are changes made for room/user added below ///
+//  below are changes made so i could add a room/user  ///
 io.on('connection', socket => {
 	socket.on("join server", (username) => {
 		const user = {
