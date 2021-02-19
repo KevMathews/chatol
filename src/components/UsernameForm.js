@@ -5,10 +5,7 @@ export default function Form(props) {
 		<div className="signInContainerDiv">
 			<div className="signInTitleDiv">
 				<div className="signInDiv">
-					<img
-						className="loginPageTitleImage"
-						src="https://i.imgur.com/CzW2kzM.png"
-					/>
+					<img className="loginPageTitleImage" src="/img/smalltitle.png" />
 					<form>
 						<input
 							type="text"

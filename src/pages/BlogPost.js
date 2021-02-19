@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 export default function BlogPost(props) {
 	const [blog, setBlog] = useState({});
-	const replyNameInput = useRef(null);
-	const replyMessageInput = useRef(null);
+	// const replyNameInput = useRef(null);
+	// const replyMessageInput = useRef(null);
 	useEffect(() => {
 		(async () => {
 			try {
@@ -15,32 +15,32 @@ export default function BlogPost(props) {
 			}
 		})();
 	}, []);
-	const handleReplySubmit = async e => {
-		e.preventDefault();
-		try {
-			const response = await fetch(`/api/comments`, {
-				method: 'PUT',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					name: replyNameInput.current.value,
-					message: replyMessageInput.current.value,
-					blogID: blog._ID
-				})
-			});
-			const data = await response.json();
-			setBlog(data);
-		} catch (error) {
-			console.error(error);
-		} finally {
-			window.location.assign('/Forums');
-		}
-	};
+	// const handleReplySubmit = async e => {
+	// 	e.preventDefault();
+	// 	try {
+	// 		const response = await fetch(`/api/comments`, {
+	// 			method: 'PUT',
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: JSON.stringify({
+	// 				name: replyNameInput.current.value,
+	// 				message: replyMessageInput.current.value,
+	// 				blogID: blog._ID
+	// 			})
+	// 		});
+	// 		const data = await response.json();
+	// 		setBlog(data);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	} finally {
+	// 		window.location.assign('/Forums');
+	// 	}
+	// };
 	return (
 		<div className="forumsContainer">
 			<div className="innerForumsContainer">
-				<img src="/img/smalltitle.png" />
+				<img src="/img/smalltitle2.png" />
 				<div className="forumsPage">
 					<h4>From: {blog.name ? blog.name : ''}</h4>
 					<h4>{blog.title ? blog.title : ''}</h4>
@@ -61,7 +61,7 @@ export default function BlogPost(props) {
 							  })
 							: ''}
 					</ul>
-					Reply
+					{/* Reply
 					<form
 						style={{ display: 'flex', flexDirection: 'column' }}
 						onSubmit={handleReplySubmit}
@@ -87,7 +87,7 @@ export default function BlogPost(props) {
 							></input>
 						</label>
 						<input type="submit" value="Reply to post" />
-					</form>
+					</form> */}
 				</div>
 			</div>
 		</div>

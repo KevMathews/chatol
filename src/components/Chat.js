@@ -167,7 +167,6 @@ export default function Chat(props) {
 						onKeyPress={handleKeyPress}
 						placeholder="say something..."
 					/>
-					{/* <input onChange={props.selectFile} type="file" /> */}
 				</ChatPanel>
 			</Container>
 		</div>

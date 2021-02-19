@@ -63,7 +63,7 @@ export default function UpdatePost(props) {
 	return (
 		<div className="forumsContainer">
 			<div className="innerForumsContainer">
-				<img src="/img/smalltitle.png" />
+				<img src="/img/smalltitle2.png" />
 				<div className="forumsPage">
 					<h4>From: {blog.name ? blog.name : ''}</h4>
 					<h4>{blog.title ? blog.title : ''}</h4>
@@ -96,7 +96,6 @@ export default function UpdatePost(props) {
 								ref={nameInput}
 								defaultValue={blog.name}
 							/>
-							{/* <input type="text" ref={titleInput} defaultValue={blog.title} /> */}
 						</label>
 						<label>
 							{' '}
@@ -109,7 +108,6 @@ export default function UpdatePost(props) {
 								ref={titleInput}
 								defaultValue={blog.title}
 							/>
-							{/* <input type="text" ref={titleInput} defaultValue={blog.title} /> */}
 						</label>
 						<label>
 							Body:
@@ -122,7 +120,6 @@ export default function UpdatePost(props) {
 								ref={bodyInput}
 								defaultValue={blog.body}
 							></textarea>
-							{/* <input type="text" ref={bodyInput} defaultValue={blog.body} /> */}
 						</label>
 						<input type="submit" value="Update Your Post" />
 						<br />

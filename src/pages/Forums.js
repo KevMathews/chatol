@@ -8,9 +8,8 @@ export default function Forums(props) {
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
 	const nameInput = useRef(null);
-	const timestamp = Date.now();
+
 	useEffect(() => {
-		// Immediately Invoked Function Expression
 		(async () => {
 			try {
 				const response = await fetch('/api/blogs');
@@ -39,7 +38,7 @@ export default function Forums(props) {
 				})
 			});
 			const data = await response.json();
-			setBlogs([data, ...blogs]);
+			setBlogs([...blogs, data]);
 		} catch (error) {
 			console.error(error);
 		} finally {
@@ -51,7 +50,18 @@ export default function Forums(props) {
 	return (
 		<div className="forumsContainer">
 			<div className="innerForumsContainer">
-				<img src="/img/smalltitle.png" />
+				<img src="/img/forumstitlegif.gif" />
+				<br />
+				<div className="forumsTopTextDiv">
+					<p className="forumsTopText">
+						Gone, but certainly not forgotten, are the early days of America
+						Online. This site was made to pay homage to the AOL that once was...
+					</p>
+					<p className="forumsTopText">
+						Pay tribute by posting your random thoughts or memories below!
+					</p>
+				</div>
+				<br />
 				<button>
 					<a href="#bottom">Jump to Bottom of the Page</a>
 				</button>
@@ -66,7 +76,8 @@ export default function Forums(props) {
 
 								<h6 className="blogBody">{blog.body}</h6>
 								<p className="createdOn">
-									created on: <Moment>{blog.createdAt}</Moment>
+									created on:
+									<Moment>{blog.createdAt}</Moment>
 								</p>
 								<br />
 								<hr />
@@ -78,7 +89,7 @@ export default function Forums(props) {
 					<hr className="forumHr" />
 					<br />
 					<div className="createMessageDiv">
-						<h3>Post your Memories Below:</h3>
+						<h3>Post your Memories Here:</h3>
 						<form
 							style={{ display: 'flex', flexDirection: 'column' }}
 							onSubmit={handleSubmit}
@@ -101,7 +112,7 @@ export default function Forums(props) {
 								<input
 									type="text"
 									className="form-control"
-									placeholder="Your Name"
+									placeholder="Your name"
 									name="name"
 									ref={nameInput}
 								/>
@@ -117,7 +128,6 @@ export default function Forums(props) {
 									name="message"
 									ref={bodyInput}
 								></textarea>
-								{/* <input type="text" ref={bodyInput} /> */}
 							</label>
 							<input type="submit" value="Submit Your Post" />
 						</form>
