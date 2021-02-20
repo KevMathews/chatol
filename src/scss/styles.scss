@@ -31,7 +31,33 @@ align-items: center;
 min-height: 100vh;
 }
 .signInTitleDiv{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 680px;
+  min-width: 50%;
+  align-items: center;
+  min-height: 65vh;
+  // background-color:#006599;
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+  -webkit-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+  -moz-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+  border: 2px solid black;
+  margin-top: 30px;
+}
+.signInDiv, .signInButtonDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.signInButton:hover {
+background-color: #48D8F8;
 }
 .liveChatDiv{
   background-color: #fafafa;
@@ -44,10 +70,11 @@ min-height: 100vh;
 }
 .chatChannelName{
   font-size: 2.5vw;
-  margin-left: 25%;
-  margin-top: 70%;
   text-align: center;
   
+}
+.messageSender {
+  color: blue;
 }
 .mainPageContainer {
   display: flex;
@@ -78,9 +105,10 @@ min-height: 100vh;
   height: 150%;
 }
 .chatPageLogo {
-  height: 95%;
+  height: 90%;
   width: auto;
   margin-left: 5%;
+  
 }
 .AppPage{
   background: url('/img/indexBackground2.jpg')no-repeat center center fixed; 

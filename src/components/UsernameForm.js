@@ -6,6 +6,7 @@ export default function Form(props) {
 			<div className="signInTitleDiv">
 				<div className="signInDiv">
 					<img className="loginPageTitleImage" src="/img/smalltitle.png" />
+					<br />
 					<form>
 						<input
 							type="text"
@@ -14,8 +15,12 @@ export default function Form(props) {
 							placeholder="Enter User Name..."
 						/>
 						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button onClick={props.connect}>Enter Chat</button>
+						<br />
+						<div className="signInButtonDiv">
+							<button className="signInButton" onClick={props.connect}>
+								Enter Chat
+							</button>
+						</div>
 					</form>
 				</div>
 			</div>

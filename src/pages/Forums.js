@@ -1,3 +1,8 @@
+// Another area of the app that I ran out of time when building...  Wanted to
+// add the ability to add replies, as well as when you post have it so you
+// could add an emoji where you could lay a wreath, light a candle, or pour
+// one out in your memorial post :)
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';

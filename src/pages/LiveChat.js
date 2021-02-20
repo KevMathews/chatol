@@ -1,6 +1,14 @@
+// Was a lot of fun learning how to use socket.io and suprising easy to implement.
+// Arthur had suggested I try adding video chat using WebRTC which after looking
+// into seemed very doable yet again though time was the issue :( I had made it
+// so you could add or delete rooms but thought that could eventually be a
+// problem so just left them hard coded in.  Also used Immer which I
+// originally learned about from a Youtube video by Ben Awad.   Not sure if
+// anyone will read any of these notes I wrote other then the instructors,
+// but if you do highly reccomend his channel! :)
+
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import TextField from '@material-ui/core/TextField';
 import Form from '../components/UsernameForm';
 import Chat from '../components/Chat';
 import io from 'socket.io-client';
@@ -40,7 +48,7 @@ export default function Home() {
 	function handleMessageChange(e) {
 		setMessage(e.target.value);
 	}
-
+	//  used UseEffect to reset messages to and empty string
 	useEffect(() => {
 		setMessage('');
 	}, [messages]);

@@ -1,3 +1,5 @@
+//  designed around the idea of creating a parallax effect on this page, styled inline and
+// unfortunately didnt have enough time to make it responsive :(
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 export default function About(props) {

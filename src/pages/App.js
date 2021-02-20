@@ -1,7 +1,17 @@
+//  Learned a lot building this app, especially with usestate useeffect and useref.  Still
+// not completely positive on when is the best time to use useeffect in certain situations
+// but definitely getting more comfortable.
+// The site unfortunately isnt built to be 100% responsive.  Some pages are, but ran out of
+// time so its just designed with desktop viewing in mind.
+
+// The intro/dial in to AOL part I originally tried to make 100% in css but that was taking a
+// LONG time to figure out, so to save time ended up building it out in Photoshop.  If I expand
+// on this for the 5th project I definitely want to try and see how far I can push animations
+// completely done in CSS.
+
+import { ExpansionPanelDetails, responsiveFontSizes } from '@material-ui/core';
 import React, { useState, useEffect, useRef } from 'react';
-
 import { Link } from 'react-router-dom';
-
 export default function App(props) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isInvisible, setInvisible] = useState(false);
@@ -12,7 +22,6 @@ export default function App(props) {
 	const bodyInput = useRef(null);
 	const nameInput = useRef(null);
 	useEffect(() => {
-		// Immediately Invoked Function Expression
 		(async () => {
 			try {
 				const response = await fetch('/api/blogs');
@@ -46,7 +55,6 @@ export default function App(props) {
 				>
 					<img className="loginGifs" src="/img/login.jpg" />
 					<br />
-
 					<img
 						className="mainPageConnectButton"
 						src="/img/signon1.png"
