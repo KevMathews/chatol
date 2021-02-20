@@ -62,7 +62,7 @@ I really want to re-create the AOL vibe especially the very memorable process of
 * Extend the look and feel of the AOL homepage
 * Incorporate news scrapers to build out various sections
 * Expand on the look and feel of the win 95 having clickable/functionable icons and programs existing on the faux desktop
-####  Game Screen Shots
+####  App Screen Shots
 
 <img src="public/img/Screen Shot 2021-02-19 at 8.11.26 PM.png" width="80%" >
 <img src="public/img/Screen Shot 2021-02-19 at 8.17.40 PM.png" width="80%" >
