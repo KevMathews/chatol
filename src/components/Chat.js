@@ -37,6 +37,7 @@ const Container = styled.div`
 	-webkit-box-shadow: 1px 1px 28px 10px rgba(87, 89, 89, 1);
 	-moz-box-shadow: 1px 1px 28px 10px rgba(87, 89, 89, 1);
 	border: 2px solid black;
+	padding: 20px;
 `;
 const SideBar = styled.div`
 	height: auto;

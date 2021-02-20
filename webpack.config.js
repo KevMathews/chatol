@@ -11,6 +11,7 @@ module.exports = env => {
 			App: './src/index.js',
 			main: './src/main.js'
 		},
+		
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),
 			filename: '[name].[chunkhash].js' // '[name].[chunkhash].js' put this if you want to get hashed files to cache bust

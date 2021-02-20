@@ -18,6 +18,7 @@ import Form from '../components/UsernameForm';
 import Chat from '../components/Chat';
 import io from 'socket.io-client';
 import immer from 'immer';
+import { render } from 'node-sass';
 
 //  object which contains the messages from the rooms,
 // and the messages from each room is held in arrays.
@@ -68,7 +69,8 @@ export default function Home() {
 		setMessage(e.target.value);
 	}
 
-	//  used UseEffect to reset messages to and empty string
+	//  useEffect runes everytime messages changes turns set message back
+	// into an empty string so textbox is cleared out
 	useEffect(() => {
 		setMessage('');
 	}, [messages]);
@@ -136,13 +138,22 @@ export default function Home() {
 		}
 		setCurrentChat(currentChat);
 	}
-
 	//  This is used on the Form component takes the value input and sets it
 	// using setUsername
 	function handleChange(e) {
 		e.preventDefault();
 		setUsername(e.target.value);
 	}
+	//  Sets connected to true causing Chat component to be rendered.
+	// Then, io.connect returns a newly connected client and sets it to the socketRef
+	// joins server, passes down username, joins the general room and populates the messages
+	// and passing back allusers which is set to state so and can then see render the list
+	// of whos logged in.  Finally it listens for newmessages which is an object containing the
+	// content sender and chatname.  Then use an update function to set state and
+	// then build up the newmessages object.  it checks if user exists if it does it
+	// pushes it into the array at that key of the newmessages object.  otherwise
+	// it creates a new array containing the object just created.  And laslty, it
+	// returns the newmessages which sets state and does a new render.
 
 	function connect() {
 		setConnected(true);
