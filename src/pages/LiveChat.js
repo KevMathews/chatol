@@ -12,14 +12,13 @@
 // or any other instructor, especially on how to fix my bug on personal
 // messaging so i can get it to work, would be MUCH appreciated! :)
 
-
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Form from '../components/UsernameForm';
 import Chat from '../components/Chat';
 import io from 'socket.io-client';
 import immer from 'immer';
-import { getOwnPropertyDescriptors } from 'immer/dist/internal'
+// import { getOwnPropertyDescriptors } from 'immer/dist/internal';
 
 //  object which contains the messages from the rooms,
 // and the messages from each room is held in arrays.
