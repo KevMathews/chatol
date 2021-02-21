@@ -1,4 +1,4 @@
-//  designed around the idea of creating a parallax effect on this page, styled inline and
+//  designed around the idea of creating a parallax effect on this page, styled inline
 // unfortunately didnt have enough time to make it responsive :(
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
@@ -59,10 +59,7 @@ export default function About(props) {
 			</div>
 			<div className="About_Page__content__heading2">
 				<h2>
-					<a
-						href="https://toystore-km.herokuapp.com/store/main"
-						target="_blank"
-					>
+					<a href="https://toystore-km.herokuapp.com/" target="_blank">
 						Toy Store
 					</a>
 				</h2>

@@ -12,12 +12,14 @@
 // or any other instructor, especially on how to fix my bug on personal
 // messaging so i can get it to work, would be MUCH appreciated! :)
 
+
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Form from '../components/UsernameForm';
 import Chat from '../components/Chat';
 import io from 'socket.io-client';
 import immer from 'immer';
+import { getOwnPropertyDescriptors } from 'immer/dist/internal'
 
 //  object which contains the messages from the rooms,
 // and the messages from each room is held in arrays.
@@ -124,9 +126,6 @@ export default function Home() {
 		setConnectedRooms(newConnectedRooms);
 	}
 
-	//  this runs everytime you click on a new channel makes sure
-	// if you arent in that chat channel sets new messages and updates
-	// the currentchat
 	function toggleChat(currentChat) {
 		if (!messages[currentChat.chatName]) {
 			const newMessages = immer(messages, draft => {
@@ -137,8 +136,6 @@ export default function Home() {
 		setCurrentChat(currentChat);
 	}
 
-	//  This is used on the Form component takes the value input and sets it
-	// using setUsername
 	function handleChange(e) {
 		e.preventDefault();
 		setUsername(e.target.value);
