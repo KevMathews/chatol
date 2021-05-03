@@ -1,6 +1,6 @@
 # App Title: Chatter Online
 
-[Chatter Online](http://chatteronline-km.herokuapp.com/)
+[Chatter Online](https://chatteronline-km.herokuapp.com/)
 
 ## Concept:
 
@@ -73,4 +73,4 @@ Setting up socket.io originally wasn't that hard, but understanding how to creat
 
 
 
-### App Demo:  [Chatter Online](http://chatteronline-km.herokuapp.com/)
+### App Demo:  [Chatter Online](https://chatteronline-km.herokuapp.com/)
