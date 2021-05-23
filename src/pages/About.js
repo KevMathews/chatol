@@ -82,7 +82,7 @@ export default function About(props) {
 			</div>
 			<div className="About_Page__content__heading4">
 				<h2>
-					<a href="https://groceries-km.herokuapp.com/" target="_blank">
+					<a href="https://groceries.kevmathews.com/" target="_blank">
 						World of Groceries
 					</a>
 				</h2>

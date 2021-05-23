@@ -55,7 +55,7 @@ export default function Forums(props) {
 	return (
 		<div className="forumsContainer">
 			<div className="innerForumsContainer">
-				<img src="/img/forumstitlegif.gif" />
+				<img className="forumGif" src="/img/forumstitlegif.gif" />
 				<br />
 				<div className="forumsTopTextDiv">
 					<p className="forumsTopText">

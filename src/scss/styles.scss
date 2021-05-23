@@ -6,13 +6,30 @@
 body {
   font-size: 16px;
 }
-.NavBar {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.3rem;
-}
+@media screen and (min-width:451px) {
+  .NavBar {
+    display: flex;
+    justify-content: space-evenly;
+    place-self: center;
+    min-width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2em;
+    background-color: #008081;
+    position: sticky; top: 0;
+    // margin-right: 2%;
+    a {
+      color: white;
+    }
+  }
+  .forumGif {
+    max-width: 90%;
+  }
+  }
+
+// .navItems {
+  
+//   padding-right: 2%;
+// }
 .blogTitles {
   font-family: 'Nunito Sans', sans-serif;
   color: black;
@@ -28,31 +45,26 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-min-height: 100vh;
+min-height: 97.5vh;
 }
 .signInTitleDiv{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: center;
-  max-width: 680px;
-  min-width: 50%;
-  align-items: center;
-  min-height: 65vh;
-  // background-color:#006599;
+  // max-width: 50%;
+  width: 500px;
+  max-width: 80%;
   background-color: #f0f0f0;
   box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
   -webkit-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
   -moz-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
   border: 2px solid black;
-  margin-top: 30px;
+  // margin-top: 30px;
 }
 .signInDiv, .signInButtonDiv{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   justify-content: center;
   align-items: center;
 }
@@ -80,29 +92,38 @@ background-color: #48D8F8;
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100vh;  
+  height:99vh; 
+  overflow-y: hidden;
+  
 }
 .loginGifDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0%;
+ 
 }
 .loginGifs {
   width: 100%;
+  
+  margin-right: 1%;
+
+ 
   height: auto;
-  box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
-  -webkit-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
-  -moz-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.7); 
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.7);
 }
 .connectToChatterOnlineDiv{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0%;
+  max-width: 90%;
 }
 .loginPageTitleImage{
-  height: 150%;
+  width: auto;
+  max-width: 200px;
+
 }
 .chatPageLogo {
   height: 90%;
@@ -117,7 +138,13 @@ background-color: #48D8F8;
   -o-background-size: cover;
   background-size: cover;
   background-color: #008081;
-  overflow: hidden;
+  overflow-y: hidden;
+  position:absolute;
+  width:100%;
+  overflow-y:hidden;
+  top:25px;
+  bottom:0;
+  
 
 }
 .mainPageConnectButton {
@@ -327,7 +354,7 @@ background-color: #48D8F8;
   justify-content: center;
   align-items: center;
   justify-content: center;
-  max-width: 1080px;
+  max-width: 90%;
   min-width: 65%;
   align-items: center;
   min-height: 60vh;
@@ -375,4 +402,97 @@ background-color: #48D8F8;
 .forumsTopText {
   color: white;
   font-size: 1em;
+}
+.preLoad {
+  background: url('/img/signon2.png') no-repeat -9999px -9999px; 
+}
+@media screen and (max-width: 450px) {
+  .NavBar {
+    display: flex;
+    justify-content: space-evenly;
+    place-self: center;
+    min-width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: .9em;
+    background-color: #008081;
+    position: sticky; top: 0;
+    a {
+      color: white;
+    }
+  }
+  
+  .AppPage {
+    position:absolute;
+    width:100%;
+    overflow-y:hidden;
+    top:15px;
+    bottom:0;
+  }
+  .loginGifDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    max-width: 70%;
+    overflow-y: hidden;
+   
+  }
+  .mainPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:99vh; 
+    overflow-y: hidden;
+    
+  }
+  .connectToChatterOnlineDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    max-width: 90%;
+    overflow-y: hidden;
+  }
+  .loginGifs {
+    width: 100%;
+    
+    margin-right: 1%;
+  
+   
+    height: auto;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.7);
+  }
+  .innerForumsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 65%;
+    align-items: center;
+    min-height: 60vh;
+    // background-color:#006599;
+    background-color: #022e5e;
+    box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+    -webkit-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+    -moz-box-shadow: 1px 1px 28px 10px rgba(87,89,89,1);
+    border: 2px solid black;
+    margin-top: 30px;
+  }
+  .forumGif {
+    max-width: 90%;
+  }
+  .forumsTopText {
+    color: white;
+    font-size: .8em;
+  }
+  .blogTitles {
+    font-size: 1.1em;
+    
+  }
+  .blogName {
+    font-size: .9em;
+  }
 }

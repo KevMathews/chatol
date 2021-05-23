@@ -9,14 +9,12 @@
 // on this for the 5th project I definitely want to try and see how far I can push animations
 // completely done in CSS.
 
-import { ExpansionPanelDetails, responsiveFontSizes } from '@material-ui/core';
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 export default function App(props) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isInvisible, setInvisible] = useState(false);
 
-	const toggleConnectingToChatterOnline = () => {};
+	// const toggleConnectingToChatterOnline = () => {};
 	const [blogs, setBlogs] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
@@ -63,6 +61,7 @@ export default function App(props) {
 				</div>
 				<audio src="img/login.mp3" ref={audioRef}></audio>
 			</div>
+			<div className="preLoad"></div>
 		</div>
 	);
 }
